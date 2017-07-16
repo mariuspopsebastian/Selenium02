@@ -16,6 +16,17 @@ public class AutoSuggestion {
         driver.findElement(By.xpath(".//*[@id='m_rtxtEmail1']")).sendKeys("gre");
         WebDriverWait wd = new WebDriverWait(driver, 5);
 
+        try
+        {
+            //code to switch to alert and click on it
+        }
+        catch(Exception e)
+        {
+
+        }
+
+
+
         wd.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(".//*[@id='m_frmRegister']/div[1]/ul")));
 
         driver.findElement(By.xpath(".//*[@id='m_frmRegister']/div[1]/ul/li[2]/p")).click();
