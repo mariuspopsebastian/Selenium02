@@ -15,12 +15,20 @@ public class Webtable {
         System.setProperty("webdriver.chrome.driver", "D:\\Prog\\Pt proiect\\chrome\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         //driver.manage().window().maximize();
-        driver.get("http://www.espncricinfo.com/sri-lanka-v-zimbabwe-2017/engine/match/1104483.html");
-        WebElement table = driver.findElement(By.xpath("//table[@class='batting-table innings']"));
+        driver.get("http://www.espncricinfo.com/rankings/content/page/211271.html");
+        WebElement table = driver.findElement(By.xpath("//table[@class='StoryengineTable']"));
         // finding the rows in table
 
         List<WebElement> noofrows = table.findElements(By.tagName("tr"));
         System.out.println("nr of rows are" + " " + noofrows.size());
+        int i = 0;
+        for (WebElement eachrow:noofrows)
+        {
+
+            List<WebElement>eachcolounb = eachrow.findElements(By.tagName("td"));
+            i++;
+            System.out.println("nr of coloumns in"+" "+ i +" " + "the row are"+ " "+ eachcolounb.size());
+        }
 
 
 
