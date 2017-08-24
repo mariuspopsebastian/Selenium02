@@ -21,14 +21,23 @@ public class Webtable {
 
         List<WebElement> noofrows = table.findElements(By.tagName("tr"));
         System.out.println("nr of rows are" + " " + noofrows.size());
-        int i = 0;
-        for (WebElement eachrow:noofrows)
-        {
 
-            List<WebElement>eachcolounb = eachrow.findElements(By.tagName("td"));
+        // finding columns
+        int i = 0;
+        for (WebElement eachrow:noofrows) {
+
+            List<WebElement> eachcolounb = eachrow.findElements(By.tagName("td"));
             i++;
-            System.out.println("nr of coloumns in"+" "+ i +" " + "the row are"+ " "+ eachcolounb.size());
+            System.out.println("nr of coloumns in" + " " + i + " " + "the row are" + " " + eachcolounb.size());
+
+
+            //finding cell value
+            for (WebElement text : eachcolounb) {
+                System.out.println(text.getText());
+            }
+
         }
+
 
 
 
